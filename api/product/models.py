@@ -5,10 +5,15 @@ from django.db import models
 
 class Product(models.Model):
     CHOICES = (
-        ('BREAKFIRST', 'උදේ'),
-        ('LUNCH', 'දවල්'),
-        ('DINNER', 'රාත්‍රි'),
-        ('SNACK', 'බයිට්'),
+        ('BF', 'උදේ'),
+        ('LU', 'දවල්'),
+        ('DI', 'රාත්‍රි'),
+        ('SN', 'බයිට්'),
+        ('BF-LU', 'උදේ-දවල්'),
+        ('BF-DI', 'උදේ-රාත්‍රි'),
+        ('LU-DI', 'දවල්-රාත්‍රි'),
+        ('BF-LU-DI', 'උදේ-දවල්-රාත්‍රි'),
+
 
     )
 
