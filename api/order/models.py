@@ -9,14 +9,14 @@ class Order(models.Model):
         ('dilever', 'dilever'),
     )
 
-    name = models.CharField(max_length=50)
-    image = models.URLField()
-    price = models.IntegerField()
-    unit = models.IntegerField()
-    total = models.IntegerField()
-    phone_no = models.IntegerField()
-    adress = models.TextField()
-    status = models.CharField(max_length=50, choices=CHOICES)
+    name = models.CharField(max_length=50, null=True)
+    image = models.URLField(null=True)
+    price = models.IntegerField(null=True)
+    unit = models.IntegerField(null=True)
+    total = models.IntegerField(null=True)
+    phone_no = models.IntegerField(null=True)
+    adress = models.TextField(null=True)
+    status = models.CharField(max_length=50, choices=CHOICES, null=True)
 
     def __str__(self):
         return self.name
