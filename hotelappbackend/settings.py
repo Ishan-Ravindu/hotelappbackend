@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'api.banner',
-    'api.product'
+    'api.product',
+    'api.order'
 ]
 
 MIDDLEWARE = [
@@ -64,7 +65,7 @@ ROOT_URLCONF = 'hotelappbackend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -86,6 +87,8 @@ WSGI_APPLICATION = 'hotelappbackend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': 'mydatabase',
 
     }
 }

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    {% for order in orders %}
+
+    <h1>{{order.name}}</h1>
+    <h1>{{order.price}}</h1>
+    <h1>{{order.unit}}</h1>
+    <h1>{{order.total}}</h1>
+    <h1>{{order.phone_no}}</h1>
+    <h1>{{order.adress}}</h1>
+    <h1>{{order.status}}</h1>
+    <img src="{{order.image}}" alt="Flowers in Chania" />
+
+    {% endfor %}
+  </body>
+</html>
