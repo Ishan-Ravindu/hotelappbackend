@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'wp_onhbwym+kv9-c3vo1pdzr9b*k($u+=lk&*_89eubb_2r9um'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
     'api.banner',
-    'api.product'
+    'api.product',
+    'api.order'
 ]
 
 MIDDLEWARE = [
@@ -86,6 +87,8 @@ WSGI_APPLICATION = 'hotelappbackend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
+        # 'ENGINE': 'django.db.backends.sqlite3',
+        # 'NAME': 'mydatabase',
 
     }
 }
@@ -136,11 +139,3 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CORS_ALLOW_ALL_ORIGINS = True
-
-REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
-    # or allow read-only access for unauthenticated users.
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-    ]
-}
