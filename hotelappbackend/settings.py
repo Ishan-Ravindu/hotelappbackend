@@ -141,8 +141,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # MEDIA_URL = '/media/'
 # MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'hbnmovn6m',
     'API_KEY': '734692948537426',
