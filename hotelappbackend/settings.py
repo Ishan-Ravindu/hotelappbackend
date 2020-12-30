@@ -138,9 +138,6 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
 CLOUDINARY_STORAGE = {
     'CLOUD_NAME': 'hbnmovn6m',
     'API_KEY': '734692948537426',
