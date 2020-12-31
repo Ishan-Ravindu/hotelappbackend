@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'wp_onhbwym+kv9-c3vo1pdzr9b*k($u+=lk&*_89eubb_2r9um'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -33,13 +33,14 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
     'corsheaders',
     'cloudinary',
     'rest_framework',
@@ -136,6 +137,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'hotelappbackend/static')
+]
 
 
 CLOUDINARY_STORAGE = {
@@ -149,58 +153,31 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 JAZZMIN_SETTINGS = {
     # title of the window
-    "site_title": "Library Admin",
+    "site_title": "LUNCH CHOICE",
 
     # Title on the brand, and the login screen (19 chars max)
-    "site_header": "Library",
+    "site_header": "LUNCH CHOICE",
 
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
-    "site_logo": "books/img/logo.png",
+    "site_logo": "logo.jpg",
 
     # Welcome text on the login screen
-    "welcome_sign": "Welcome to the library",
+    "welcome_sign": "Welcome to the Admin Pannel",
 
     # Copyright on the footer
-    "copyright": "Acme Library Ltd",
+    "copyright": "LUNCH CHOICE",
 
     # The model admin to search from the search bar, search bar omitted if excluded
-    "search_model": "auth.User",
+
 
     # Field name on user model that contains avatar image
     "user_avatar": None,
-
-    ############
-    # Top Menu #
-    ############
-
-    # Links to put along the top menu
-    "topmenu_links": [
-
-        # Url that gets reversed (Permissions can be added)
-        {"name": "Home",  "url": "admin:index",
-            "permissions": ["auth.view_user"]},
-
-        # external url that opens in a new window (Permissions can be added)
-        {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues",
-            "new_window": True},
-
-        # model admin to link to (Permissions checked against model)
-        {"model": "auth.User"},
-
-        # App with dropdown menu to all its models pages (Permissions checked against models)
-        {"app": "books"},
-    ],
 
     #############
     # User Menu #
     #############
 
     # Additional links to include in the user menu on the top right ("app" url type is not allowed)
-    "usermenu_links": [
-        {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues",
-            "new_window": True},
-        {"model": "auth.user"}
-    ],
 
     #############
     # Side Menu #
@@ -219,17 +196,8 @@ JAZZMIN_SETTINGS = {
     "hide_models": [],
 
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
-    "order_with_respect_to": ["auth", "books", "books.author", "books.book"],
+    "order_with_respect_to": ["banner", "product", "order", "auth.User"],
 
-    # Custom links to append to app groups, keyed on app name
-    "custom_links": {
-        "books": [{
-            "name": "Make Messages",
-            "url": "make_messages",
-            "icon": "fas fa-comments",
-            "permissions": ["books.view_book"]
-        }]
-    },
 
     # Custom icons for side menu apps/models See https://fontawesome.com/icons?d=gallery&m=free
     # for a list of icon classes
@@ -237,6 +205,12 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
+        "order.Order": "far fa-calendar-check",
+        "product.Product": "fab fa-product-hunt",
+        "banner.Banner": "fas fa-ad",
+
+
+
     },
     # Icons that are used when one is not manually specified
     "default_icon_parents": "fas fa-chevron-circle-right",
@@ -270,5 +244,5 @@ JAZZMIN_SETTINGS = {
     # override change forms on a per modeladmin basis
     "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
     # Add a language dropdown into the admin
-    "language_chooser": True,
+    "language_chooser": False,
 }
