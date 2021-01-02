@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'api',
     'api.banner',
     'api.product',
-    'api.order'
+    'api.order',
+    'api.rice'
 ]
 
 MIDDLEWARE = [
@@ -89,7 +90,7 @@ WSGI_APPLICATION = 'hotelappbackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        # 'ENGINE': 'django.db.backends.postgresql',
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'mydatabase',
 
@@ -196,7 +197,7 @@ JAZZMIN_SETTINGS = {
     "hide_models": [],
 
     # List of apps (and/or models) to base side menu ordering off of (does not need to contain all apps/models)
-    "order_with_respect_to": ["banner", "product", "order", "auth.User"],
+    "order_with_respect_to": ["order", "product", "Rice", "banner"],
 
 
     # Custom icons for side menu apps/models See https://fontawesome.com/icons?d=gallery&m=free
@@ -208,6 +209,12 @@ JAZZMIN_SETTINGS = {
         "order.Order": "far fa-calendar-check",
         "product.Product": "fab fa-product-hunt",
         "banner.Banner": "fas fa-ad",
+        "rice.Rice": "fas fa-utensils",
+        "rice.Curry": "fas fa-carrot",
+        "rice.Image": "fas fa-image",
+
+
+
 
 
 

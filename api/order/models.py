@@ -6,7 +6,8 @@ class Order(models.Model):
     CHOICES = (
         ('pending', 'pending'),
         ('conform', 'conform'),
-        ('dilever', 'dilever'),
+        ('dileved', 'dileved'),
+        ('rejected', 'rejected'),
     )
 
     name = models.CharField(max_length=50, )

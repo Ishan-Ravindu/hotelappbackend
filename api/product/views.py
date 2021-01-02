@@ -6,5 +6,5 @@ from .models import Product
 
 
 class ProductViewSet(viewsets.ModelViewSet):
-    queryset = Product.objects.all().order_by('name')
+    queryset = Product.objects.filter(is_stock_avalable=True)
     serializer_class = ProductSerializer
