@@ -3,6 +3,7 @@ from django.db import models
 
 class Image(models.Model):
     CHOICES = (
+
         ('BF', 'උදේ'),
         ('LU', 'දවල්'),
         ('DI', 'රාත්‍රි'),
@@ -21,7 +22,6 @@ class Rice(models.Model):
         ('BF', 'උදේ'),
         ('LU', 'දවල්'),
         ('DI', 'රාත්‍රි'),
-        ('SN', 'බයිට්'),
         ('BF-LU', 'උදේ-දවල්'),
         ('BF-DI', 'උදේ-රාත්‍රි'),
         ('LU-DI', 'දවල්-රාත්‍රි'),
@@ -43,7 +43,6 @@ class Curry(models.Model):
         ('BF', 'උදේ'),
         ('LU', 'දවල්'),
         ('DI', 'රාත්‍රි'),
-        ('SN', 'බයිට්'),
         ('BF-LU', 'උදේ-දවල්'),
         ('BF-DI', 'උදේ-රාත්‍රි'),
         ('LU-DI', 'දවල්-රාත්‍රි'),

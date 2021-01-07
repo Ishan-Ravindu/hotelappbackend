@@ -15,7 +15,7 @@ class RiceSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Rice
-        fields = ('id', 'name', 'price', 'is_stock_avalable')
+        fields = ('id', 'name', 'price', 'category', 'is_stock_avalable')
 
 
 class CurrySerializer(serializers.HyperlinkedModelSerializer):
