@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Image, Rice, Curry
+from .models import Rice, Curry
 
 
 class curry(admin.ModelAdmin):
@@ -16,5 +16,3 @@ class rice(admin.ModelAdmin):
 
 
 admin.site.register(Rice, rice)
-
-admin.site.register(Image)

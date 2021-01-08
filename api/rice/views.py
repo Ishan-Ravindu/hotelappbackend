@@ -3,16 +3,11 @@ from .serializers import ImageSerializer, RiceSerializer, CurrySerializer
 from .models import Curry, Image, Rice
 
 
-class ImageViewSet(viewsets.ModelViewSet):
-    queryset = Image.objects.all()
-    serializer_class = ImageSerializer
-
-
 class RiceViewSet(viewsets.ModelViewSet):
-    queryset = Rice.objects.all()
+    queryset = Rice.objects.filter(is_stock_avalable=True)
     serializer_class = RiceSerializer
 
 
 class CurryViewSet(viewsets.ModelViewSet):
-    queryset = Curry.objects.all()
+    queryset = Curry.objects.filter(is_stock_avalable=True)
     serializer_class = CurrySerializer
