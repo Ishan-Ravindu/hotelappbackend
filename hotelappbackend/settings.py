@@ -211,7 +211,7 @@ JAZZMIN_SETTINGS = {
         "banner.Banner": "fas fa-ad",
         "rice.Rice": "fas fa-utensils",
         "rice.Curry": "fas fa-carrot",
-        "rice.Image": "fas fa-image",
+
 
 
 
