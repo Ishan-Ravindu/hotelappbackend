@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .serializers import ImageSerializer, RiceSerializer, CurrySerializer
-from .models import Curry, Image, Rice
+from .serializers import RiceSerializer, CurrySerializer
+from .models import Curry, Rice
 
 
 class RiceViewSet(viewsets.ModelViewSet):
