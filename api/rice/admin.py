@@ -8,7 +8,7 @@ class curry(admin.ModelAdmin):
 
     list_filter = ("is_stock_avalable",)
     search_fields = ("name",)
-    actions = ("stock_avalable", "stock_not_avalable")
+    actions = ("stock_avalable", "stock_not_avalable", "delete_selected")
 
     def stock_avalable(self, request, queryset):
         count = queryset.update(is_stock_avalable=True)
@@ -30,7 +30,7 @@ class rice(admin.ModelAdmin):
 
     list_filter = ("is_stock_avalable", )
     search_fields = ("name",)
-    actions = ("stock_avalable", "stock_not_avalable")
+    actions = ("stock_avalable", "stock_not_avalable", "delete_selected")
 
     def stock_avalable(self, request, queryset):
         count = queryset.update(is_stock_avalable=True)

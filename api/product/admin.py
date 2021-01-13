@@ -7,7 +7,7 @@ class Filter(admin.ModelAdmin):
                     "is_stock_avalable")
     list_filter = ("is_stock_avalable", "category")
     search_fields = ("name",)
-    actions = ("stock_avalable", "stock_not_avalable")
+    actions = ("stock_avalable", "stock_not_avalable", "delete_selected")
 
     def stock_avalable(self, request, queryset):
         count = queryset.update(is_stock_avalable=True)

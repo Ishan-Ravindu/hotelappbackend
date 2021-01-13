@@ -7,7 +7,7 @@ class Filter(admin.ModelAdmin):
                     "total", "adress", "created_at", "updated_at", "status")
     list_filter = ("status", "created_at")
     actions = ("set_status_to_conform", "set_status_to_diliver",
-               "set_status_to_rejected")
+               "set_status_to_rejected", "delete_selected")
     search_fields = ("name", "phone_no", "adress")
 
     def set_status_to_conform(self, request, queryset):
