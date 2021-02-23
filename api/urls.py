@@ -7,4 +7,5 @@ urlpatterns = [
     path('product/', include('api.product.urls')),
     path('order/', include('api.order.urls')),
     path('rice/', include('api.rice.urls')),
+    path('mobile/', include('api.mobile.urls')),
 ]

@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'api.banner',
     'api.product',
     'api.order',
-    'api.rice'
+    'api.rice',
+    'api.mobile'
 ]
 
 MIDDLEWARE = [
@@ -90,15 +91,15 @@ WSGI_APPLICATION = 'hotelappbackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': 'mydatabase',
+        # 'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
 
     }
 }
 
-db_from_env = dj_database_url.config(conn_max_age=600)
-DATABASES['default'].update(db_from_env)
+# db_from_env = dj_database_url.config(conn_max_age=600)
+# DATABASES['default'].update(db_from_env)
 
 
 # Password validation
